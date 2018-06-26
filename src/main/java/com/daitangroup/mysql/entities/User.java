@@ -36,7 +36,6 @@ public class User implements Serializable {
     @JsonCreator
     public User() {
     }
-    //required = true??
     @JsonCreator
     public User(@JsonProperty("name") @NotNull @NotEmpty String name, @JsonProperty("password") @NotNull @NotEmpty String password) {
         this.name = name;

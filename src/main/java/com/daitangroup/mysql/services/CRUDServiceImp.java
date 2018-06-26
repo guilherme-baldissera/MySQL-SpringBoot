@@ -13,16 +13,17 @@ import java.util.Optional;
 @Service
 public class CRUDServiceImp implements CRUDService {
 
-    @Autowired
-    UserRepository userRepository;
-
     private static String USER_ALREADY_EXIST = "User already exist";
+
     private static String USER_NOT_FOUND = "User not found";
+
     private static String USER_ID_MISSED = "User id is missed";
 
+    private UserRepository userRepository;
 
-
-    public CRUDServiceImp() {
+    @Autowired
+    public CRUDServiceImp(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     public User addUser(User user){
