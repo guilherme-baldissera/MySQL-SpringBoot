@@ -2,7 +2,9 @@ package com.daitangroup.mysql.services;
 
 import com.daitangroup.mysql.entities.User;
 
-public interface CRUDService {
+import java.util.List;
+
+public interface UserService {
     User addUser(User user);
 
     User updateUser(User user);
@@ -10,4 +12,8 @@ public interface CRUDService {
     void deleteUser(User user);
 
     User getUser(Integer id);
+
+    List<User> getAllUsers();
+
+    User getUserByName(String name);
 }

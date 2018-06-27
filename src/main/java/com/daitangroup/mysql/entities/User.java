@@ -16,11 +16,11 @@ import java.io.Serializable;
 @Entity
 public class User implements Serializable {
 
+    private static final long serialVersionUID = 6536743356912738845L;
     @Getter
     @Setter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NotNull
     private Integer id;
     @Getter
     @Setter
@@ -33,9 +33,9 @@ public class User implements Serializable {
     @NotEmpty
     private String password;
 
-    @JsonCreator
     public User() {
     }
+
     @JsonCreator
     public User(@JsonProperty("name") @NotNull @NotEmpty String name, @JsonProperty("password") @NotNull @NotEmpty String password) {
         this.name = name;
